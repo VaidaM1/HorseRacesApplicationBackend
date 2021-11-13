@@ -33,29 +33,12 @@ namespace HorseRaseApplicationBackend.Services
 
         public async Task<int> CreateAsync(Horse horse)
         {
-            var newHose = new Horse()
-            {
-                Name = horse.Name,
-                Runs = horse.Runs,
-                Wins = horse.Wins,
-                About = horse.About
-            };
-
-            return await _horseRepository.CreateAsync(newHose);
+            return await _horseRepository.CreateAsync(horse);
         }
 
         public async Task UpdateAsync(Horse horse)
         {
-            var updatedHose = new Horse()
-            {
-                Id = horse.Id,
-                Name = horse.Name,
-                Runs = horse.Runs,
-                Wins = horse.Wins,
-                About = horse.About
-            };
-
-            await _horseRepository.UpdateAsync(updatedHose);
+            await _horseRepository.UpdateAsync(horse);
         }
         public async Task DeleteAsync(int id)
         {

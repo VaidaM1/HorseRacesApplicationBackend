@@ -21,7 +21,7 @@ namespace HorseRaseApplicationBackend.Data
             modelBuilder.Entity<Better>()
                 .HasOne(r => r.Horse)
                 .WithMany()
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }
